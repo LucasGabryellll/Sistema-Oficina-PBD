@@ -1,0 +1,50 @@
+Modelo relacional
+
+Usuario(IdUsuario, login, senha, tipo);
+
+Funcionario(idFuncionario, idUsuario, nome, cpf, rg, telefone, admissao, salario, especialidade, foto);
+	idUsuario referencia Usuario.
+
+Servico(idServico, nome);
+
+Endereco(idEndereco, logradouro, número, cidade, estado, cep);
+	
+Cliente(idCliente, nome, idEndereco, cpf_cnpj);
+	idEndereco referencia Endereco.
+
+Veiculo(idVeiculo, idCliente, placa, marca, modelo);
+	idCliente referencia Cliente.
+
+FichaCliente(idFichaC, idCliente, idVeiculo, tipoCliente);
+idCliente referencia Cliente.
+idVeiculo referencia Veiculo.	
+
+HistoricoCliente(idHistoricoC, idFichaC, entrada, saida, valor);
+	idFichaC referencia FichaCliente.
+
+LojaConveniada(idLojaConven, nome, cnpj);
+
+Peca(idPeca, nome, valor, idLojaConven);
+	idLojaCoven referencia LojaConveniada.
+
+Delivery(idDelivery, idFuncionario, idCliente, horarioAgend, latitude, longitude, status);
+	idFuncionario referencia Funcionario.
+	idCliente referencia Cliente.
+
+OrdemServico(idOrdemSer, idFuncionario, idCliente, idVeiculo, entrada, saida, status);
+	idFuncionario referencia Funcionario.
+	idCliente referencia Cliente.
+	idVeiculo referencia Veiculo.
+
+ServicoEmOrdem(idServicoOrdem, idOServico, idPeca, idResponsavel, status, valor);
+	idOServico referencia OrdemServico.
+	idPeca referencia Peca.
+	idResponsavel referencia Funcionario.
+
+
+NotaFiscalServico(idNotaFis, idCliente, idOrdemServico, valorTotal, valorAvista, valorPrazoTrintaD, valorPrazoSessentaD);
+	idCliente referencia Cliente.
+	idOrdemServico referencia OrdemServico.
+
+MotoDaMecanica(idMotoMecanica, idFuncionario);
+	idFuncionario referencia Funcionario.
