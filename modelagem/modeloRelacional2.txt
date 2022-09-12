@@ -47,4 +47,4 @@ NotaFiscalServico(idNotaFis, idCliente, idOrdemServico, valorTotal, valorAvista,
 	idOrdemServico referencia OrdemServico.
 
 MotoDaMecanica(idMotoMecanica, idFuncionario);
-	idFuncionario referencia Funcionario.
+	idFuncionario referencia Funcionario
