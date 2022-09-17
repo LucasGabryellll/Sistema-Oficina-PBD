@@ -6,9 +6,8 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
  - <img src="https://a.fsdn.com/allura/p/brmodelo/icon?1601259945?&w=90" width="25px"> BrModelo (Modelo Conceitual e Relacional)
  - <img src="https://img.icons8.com/color/344/typescript.png" width="25px"> TypeScript
- - <img src="https://nodejs.org/static/images/logo.svg" width="25px"> Node JS
+ - <img src="https://nodejs.org/static/images/logo.svg" width="25px"> Node JS e Express
  - <img src="https://img.icons8.com/color/344/postgreesql.png" width="25px"> Postgres SQL 
- 
 
 # Dependências:
  - Node: `https://nodejs.org/en/`
