@@ -1,0 +1,9 @@
+import './Login.css'
+
+export function Login() {
+  return (
+    <div>
+      <h1>Página de login</h1>
+    </div>
+  );
+}
