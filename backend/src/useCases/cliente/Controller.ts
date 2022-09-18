@@ -25,22 +25,6 @@ export const getClientesTempoOrdemServico = async (request: Request, response: R
   }
 }
 
-/**
- * Retorna os clientes não atendidos
- */
-export const getClientesNaoAtendidos = async (request: Request, response: Response) => {
-
-  try {
-    const clientesNaoAtendidos = await dao.getClientesNaoAtendidos();
-    return response.json(clientesNaoAtendidos);
-
-  } catch (error) {
-    return response.status(400).json({
-      message: "Erro ao buscar"
-    })
-  }
-}
-
 export const getClientesDevedores = async (request: Request, response: Response) => {
   try {
     const clientesDevedores = await dao.getClientes_Devedores();
