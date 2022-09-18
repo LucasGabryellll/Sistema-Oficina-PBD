@@ -12,13 +12,13 @@ const _getFuncionarioSalarioAcimaMedia = () => {
 }
 
 const _getMecanicoa_In_all_servicos = () => {
-  return 'select f.nome, so.id_funcionario, c.placa, so.id as id_servico ' + 
-  'from funcionario f, ordemservico so, veiculo c ' + 
-  'where f.id = so.id_funcionario and c.id_cliente = so.id_cliente'
+  return 'select f.nome, so.id_funcionario, c.placa, so.id as id_servico ' +
+    'from funcionario f, ordemservico so, veiculo c ' +
+    'where f.id = so.id_funcionario and c.id_cliente = so.id_cliente'
 }
 
 const _getFuncionarios_salario_igual = () => {
-  return `select salario, Count(salario) from funcionario group by salario having Count(salario)>1`
+  return `Select nome, salario from funcionario where salario in (SELECT salario from funcionario GROUP BY salario having count(salario) > 1)`
 }
 
 export class FuncionarioDao {
