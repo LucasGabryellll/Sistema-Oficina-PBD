@@ -1,5 +1,5 @@
 import { Connection, ConnectDB } from '../../ConnectionDB/connection';
-import { ServicoEmOrdem } from "./Model";
+import { ServicosEmOrdem } from "./Model";
 
 const _getAllServicosEmOrdem= () => { return 'SELECT * FROM SERVICOSEMORDEM' }
 export class ServicosEmOrdemDao {
