@@ -16,7 +16,6 @@ import {
 import {
   getAll_clientes,
   getClientesTempoOrdemServico,
-  getClientesNaoAtendidos,
   getClientesDevedores
 } from './useCases/cliente/Controller';
 
@@ -32,6 +31,11 @@ import {
   getPecaPorServico
 } from './useCases/servico/Controller';
 
+import { getAll_OrdemServicos, getClientesNaoAtendidos } from './useCases/ordemservico/Controller';
+
+import { getAll_Pecas } from './useCases/peca/Controller';
+
+import { getAll_ServicosEmOrdem } from './useCases/servicosemordem/Controller';
 
 const routes = Router();
 
@@ -60,6 +64,7 @@ routes.get('/clientes', getAll_clientes);
 routes.get('/cliente/tempo_servico', getClientesTempoOrdemServico);
 routes.get('/cliente/clientes_nao_atendidos', getClientesNaoAtendidos);
 routes.get('/cliente/devedor', getClientesDevedores);
+
 /**
  * Rotas para a tabela endereco
  */
@@ -78,7 +83,20 @@ routes.get('/servicos', getAll_Servicos);
 routes.get('/servico/peca', getPecaPorServico);
 
 /**
- * Rotas para a tabela cliente
+ * Rotas para a tabela peca
  */
+routes.get('/pecas', getAll_Pecas);
+
+/**
+ * Rotas para a tabela ordem servicos
+ */
+routes.get('/ordem_servicos', getAll_OrdemServicos);
+routes.get('/ordem_servico/clientes_nao_atendidos', getClientesNaoAtendidos);
+
+/**
+ * Rotas para a tabela servicos em ordem
+ */
+routes.get('/servicos_em_ordem', getAll_ServicosEmOrdem);
+routes.get('', () => {});
 
 export default routes;
