@@ -12,8 +12,9 @@ export const getAll_Servicos = async (request: Request, response: Response) => {
 
 
 export const getPecaPorServico = async (request: Request, response: Response) => {
-  const pecaporserivo = await dao.getPecaPorServico();
+  
   try {
+    const pecaporserivo = await dao.getPecaPorServico();
     return response.status(200).json(pecaporserivo);
 
   } catch (error) {

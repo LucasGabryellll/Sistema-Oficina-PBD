@@ -9,13 +9,13 @@ export const getAll_clientes = async (request: Request, response: Response) => {
   const cliente = await dao.getAllClientes();
   return response.json(cliente);
 }
-
-
+/**
+ * Retorna o cliente da ordem de servico dos clientes
+ */
 export const getClientesTempoOrdemServico = async (request: Request, response: Response) => {
 
-  const clientesTempoOrdemServico = await dao.getClientesTempoOrdemServico();
-  
   try {
+    const clientesTempoOrdemServico = await dao.getClientesTempoOrdemServico();
     return response.json(clientesTempoOrdemServico);
 
   } catch (error) {
@@ -25,12 +25,13 @@ export const getClientesTempoOrdemServico = async (request: Request, response: R
   }
 }
 
-
+/**
+ * Retorna os clientes não atendidos
+ */
 export const getClientesNaoAtendidos = async (request: Request, response: Response) => {
 
-  const clientesNaoAtendidos = await dao.getClientesNaoAtendidos();
-  
   try {
+    const clientesNaoAtendidos = await dao.getClientesNaoAtendidos();
     return response.json(clientesNaoAtendidos);
 
   } catch (error) {
@@ -40,3 +41,14 @@ export const getClientesNaoAtendidos = async (request: Request, response: Respon
   }
 }
 
+export const getClientesDevedores = async (request: Request, response: Response) => {
+  try {
+    const clientesDevedores = await dao.getClientes_Devedores();
+    return response.json(clientesDevedores);
+
+  } catch (error) {
+    return response.status(400).json({
+      message: "Erro ao buscar clientes devedores"
+    })
+  }
+}
