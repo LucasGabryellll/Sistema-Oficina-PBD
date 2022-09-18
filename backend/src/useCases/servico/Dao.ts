@@ -2,9 +2,12 @@ import { Connection, ConnectDB } from '../../ConnectionDB/connection';
 import { Servico } from "./Model";
 
 const _getAllServicos= () => { return 'SELECT * FROM SERVICO' }
+
+const _getPecaPorServico= () => { return 'select so.id, s.nome, pc.nome from servicosemordem so, servico s, peca pc where id_servico = s.id and id_peca = pc.id' }
+
 export class ServicoDao {
     constructor(
-  
+
     ) { }
   
     async getAll_Servicos() {
@@ -14,5 +17,14 @@ export class ServicoDao {
       cursor.end();
       return data.rows
     }
+
+    async getPecaPorServico() {
+      const cursor = Connection();
+      cursor.connect();
+      const data = await cursor.query(_getPecaPorServico())
+      cursor.end();
+      return data.rows
+    }
+
   
   }

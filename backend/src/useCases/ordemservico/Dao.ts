@@ -2,6 +2,10 @@ import { Connection, ConnectDB } from '../../ConnectionDB/connection';
 import { OrdemServico } from "./Model";
 
 const _getAllOrdemservicos= () => { return 'SELECT * FROM ORDEMSERVICO' }
+
+
+
+
 export class OrdemServicoDao {
     constructor(
   
