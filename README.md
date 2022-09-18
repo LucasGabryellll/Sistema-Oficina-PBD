@@ -1,9 +1,13 @@
 # Sistema de Oficina
 ## Desenvolvido para a cadeira: Projeto de banco de dados
 
-### Ferramentas usadas
 
-- BrModel (Modelo Conceitual)
+## 🚀 Ferramentase e Tecnologias:
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+ - <img src="https://a.fsdn.com/allura/p/brmodelo/icon?1601259945?&w=90" width="25px"> BrModelo (Modelo Conceitual e Relacional)
+ - <img src="https://img.icons8.com/color/344/typescript.png" width="25px"> TypeScript
+ - <img src="https://nodejs.org/static/images/logo.svg" width="25px"> Node JS e Express
+ - <img src="https://img.icons8.com/color/344/postgreesql.png" width="25px"> Postgres SQL 
 
 # Dependências:
  - Node: `https://nodejs.org/en/`
@@ -28,3 +32,9 @@
  - Para rodar o servidor basta digitar:
  1. Rodar com o TypeScript: `npm run start` ou `yarn run start`
  2. Rodar com o Nodemon: `npm run start` ou `yarn run start`
+
+## 🎓 Curso:
+ - Bacharelado em Sistemas de Informação.
+ - UFRPE (UAST) - Serra Talhada.
+ - Professor: Celso Brennand.
+ - 5º Período.
