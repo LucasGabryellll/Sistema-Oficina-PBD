@@ -1,5 +1,5 @@
 import { Connection, ConnectDB } from '../../ConnectionDB/connection';
-import { Model } from "./ModeL";
+import { Model } from "./Model";
 
 const _createUsuario = (id: number, login: string, senha: string, tipo: string) => {
   return `INSERT INTO USUARIO(id, login, senha, tipo) VALUES(${id}, '${login}', '${senha}', '${tipo}')`
