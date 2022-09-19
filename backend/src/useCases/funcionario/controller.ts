@@ -10,6 +10,7 @@ const dao = new FuncionarioDao();
 export const getAll_Funcionarios = async (request: Request, response: Response) => {
 
   const usuarios = await dao.getAll_Funcionarios();
+  response.header("Access-Control-Allow-Origin", "*");
   return response.json(usuarios);
 }
 
@@ -20,6 +21,7 @@ export const getFuncionario_Cliente = async (request: Request, response: Respons
 
   try {
     const funcionario_cliente = await dao.getFuncionario_Cliente();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(funcionario_cliente);
 
   } catch (error) {
@@ -33,6 +35,7 @@ export const getFuncionario_Salario_AcimaMedia = async (request: Request, respon
 
   try {
     const salario_acima = await dao.getFuncionario_Salario_AcimaMedia();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(salario_acima);
 
   } catch (error) {
@@ -45,6 +48,7 @@ export const getFuncionario_Salario_AcimaMedia = async (request: Request, respon
 export const getMecanico_in_all_servicos = async (request: Request, response: Response) => {
   try {
     const mecanico = await dao.getMecanico_in_all_servicos();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(mecanico);
 
   } catch (error) {
@@ -57,6 +61,7 @@ export const getMecanico_in_all_servicos = async (request: Request, response: Re
 export const getFuncionario_salario_igual = async (request: Request, response: Response) => {
   try {
     const funcionarios = await dao.getFuncionarios_salario_igual();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(funcionarios);
 
   } catch (error) {

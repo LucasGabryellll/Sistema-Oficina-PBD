@@ -7,6 +7,7 @@ const dao = new ClienteDao();
 export const getAll_clientes = async (request: Request, response: Response) => {
 
   const cliente = await dao.getAllClientes();
+  response.header("Access-Control-Allow-Origin", "*");
   return response.json(cliente);
 }
 /**
@@ -16,6 +17,7 @@ export const getClientesTempoOrdemServico = async (request: Request, response: R
 
   try {
     const clientesTempoOrdemServico = await dao.getClientesTempoOrdemServico();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.json(clientesTempoOrdemServico);
 
   } catch (error) {
@@ -28,6 +30,7 @@ export const getClientesTempoOrdemServico = async (request: Request, response: R
 export const getClientesDevedores = async (request: Request, response: Response) => {
   try {
     const clientesDevedores = await dao.getClientes_Devedores();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.json(clientesDevedores);
 
   } catch (error) {

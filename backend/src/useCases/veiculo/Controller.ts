@@ -10,6 +10,7 @@ const dao = new VeiculoDao();
 export const getAll_Veiculos = async (request: Request, response: Response) => {
 
   const veiculos = await dao.getAll_Veiculos();
+  response.header("Access-Control-Allow-Origin", "*");
   return response.json(veiculos);
 }
 
@@ -20,6 +21,7 @@ export const getMarcaPorVeiculo = async (request: Request, response: Response) =
   
   try {
     const marcaPorVeiculo = await dao.getMarcaPorVeiculo();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(marcaPorVeiculo);
 
   } catch (error) {
@@ -36,6 +38,7 @@ export const getModeloPorVeiculo = async (request: Request, response: Response) 
   
   try {
     const modeloPorVeiculo = await dao.getModeloPorVeiculo();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(modeloPorVeiculo);
 
   } catch (error) {

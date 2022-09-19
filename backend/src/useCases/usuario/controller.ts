@@ -15,7 +15,7 @@ export const create_usuario = async (request: Request, response: Response) => {
     await dao.save_Usuario(request.body);
 
     const idUsuario = request.body.id
-
+    response.header("Access-Control-Allow-Origin", "*");
     response.status(200).json({
       id: idUsuario,
       message: "Usuario cadastrado com sucesso"

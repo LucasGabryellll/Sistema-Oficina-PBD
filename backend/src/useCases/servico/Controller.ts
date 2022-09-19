@@ -7,6 +7,7 @@ const dao = new ServicoDao();
 export const getAll_Servicos = async (request: Request, response: Response) => {
 
   const servicos = await dao.getAll_Servicos();
+  response.header("Access-Control-Allow-Origin", "*");
   return response.json(servicos);
 }
 
@@ -15,6 +16,7 @@ export const getPecaPorServico = async (request: Request, response: Response) =>
   
   try {
     const pecaporserivo = await dao.getPecaPorServico();
+    response.header("Access-Control-Allow-Origin", "*");
     return response.status(200).json(pecaporserivo);
 
   } catch (error) {
